@@ -697,13 +697,7 @@ h2 em {
   height: 30vh;
   left: 3%;
   top: 17%;
-  background-image: url("<DSC05583 class="JPG">
- …
- <element class="intro-collage">
- …
- <i :nth-child>
-
-Selector Specificity: (0, 3, 2)");
+  background-image: url("images/collage-1.jpg");
   transform: rotate(9deg);
 }
 .intro-collage i:nth-child(2) {
