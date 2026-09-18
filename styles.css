@@ -697,7 +697,7 @@ h2 em {
   height: 30vh;
   left: 3%;
   top: 17%;
-  background-image: url("images/collage-1.jpg");
+  background-image: url("images/collage-1.JPG");
   transform: rotate(9deg);
 }
 .intro-collage i:nth-child(2) {
@@ -830,21 +830,6 @@ h2 em {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.scene-one {
-  background-image: url("images/bts-1.jpg");
-}
-.scene-two {
-  background-image: url("images/bts-2.jpg");
-}
-.scene-three {
-  background-image: url("images/bts-3.jpg");
-}
-.scene-four {
-  background-image: url("images/bts-4.jpg");
-}
-.scene-five {
-  background-image: url("images/bts-5.jpg");
 }
 .projects {
   padding: 160px 0 190px;
@@ -1432,5 +1417,96 @@ footer {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Shared media behavior: every slot keeps its layout box while media fills it. */
+.media-slot {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.media-slot > img,
+.media-slot > video {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+.media-slot > video {
+  pointer-events: none;
+}
+.media-slot > span {
+  position: relative;
+  z-index: 1;
+}
+.collage-tile {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #17142e;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0.9);
+  animation: float-tile 11s ease-in-out infinite alternate;
+}
+.collage-tile:nth-child(1) { width: 22vw; height: 30vh; left: 3%; top: 17%; transform: rotate(9deg); }
+.collage-tile:nth-child(2) { width: 18vw; height: 23vh; right: 4%; top: 14%; transform: rotate(-13deg); animation-delay: -3s; }
+.collage-tile:nth-child(3) { width: 16vw; height: 25vh; left: 12%; bottom: 11%; transform: rotate(-16deg); animation-delay: -5s; }
+.collage-tile:nth-child(4) { width: 24vw; height: 30vh; right: 12%; bottom: 8%; transform: rotate(8deg); animation-delay: -7s; }
+.collage-tile:nth-child(5) { width: 12vw; height: 18vh; left: 35%; top: 7%; transform: rotate(19deg); }
+.collage-tile:nth-child(6) { width: 14vw; height: 19vh; right: 34%; bottom: 10%; transform: rotate(-9deg); }
+.project-card > .card-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.project-card > .card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 25%, rgba(5, 6, 15, 0.88));
+}
+.project-card > .card-media > img,
+.project-card > .card-media > video {
+  z-index: 0;
+}
+.project-card > .card-index,
+.project-card > .card-label,
+.project-card > small {
+  position: relative;
+  z-index: 2;
+}
+.project-video {
+  min-height: clamp(300px, 57vw, 680px);
+  height: min(57vw, 680px);
+}
+.project-video > img,
+.project-video > video {
+  z-index: 0;
+  opacity: 0.65;
+}
+.project-video:has(> img),
+.project-video:has(> video) {
+  background: #101228;
+}
+.bts-image {
+  min-height: 260px;
+}
+@media (max-width: 800px) {
+  .collage-tile:nth-child(1),
+  .collage-tile:nth-child(4) { width: 38vw; }
+  .collage-tile:nth-child(2),
+  .collage-tile:nth-child(3) { width: 30vw; }
+  .project-video {
+    height: 58vw;
+    min-height: 230px;
   }
 }

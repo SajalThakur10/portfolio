@@ -16,6 +16,109 @@ const projects = {
   'retail-and-stores': { title: 'Retail and Stores', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Campaign / retail', description: 'A visual system for the places where discovery, design and daily life meet.', credits: 'RNM Productions / Film / Direction' },
   'podcast-work': { title: 'Podcast Work', category: 'Commercial Work / 08', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production' }
 };
+// Load project data when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('id');
+  const project = projects[projectId];
+
+  if (project) {
+    // Set title, description, category, etc.
+    document.querySelector('[data-project-category]').textContent = project.category;
+    document.querySelector('[data-project-title]').textContent = project.title;
+    document.querySelector('[data-project-type]').textContent = project.type;
+    document.querySelector('[data-project-subtitle]').textContent = project.title;
+    document.querySelector('[data-project-description]').textContent = project.description;
+    document.querySelector('[data-project-format]').textContent = project.format;
+    document.querySelector('[data-project-credits]').textContent = project.credits;
+
+    // Load video if it exists
+    if (project.video) {
+      const videoSource = document.querySelector('#video-source');
+      if (videoSource) {
+        videoSource.src = project.video;
+        const videoElement = document.querySelector('#project-video');
+        if (videoElement) {
+          videoElement.load();
+        }
+      }
+    }
+
+    // Show/Hide BTS section based on category
+    const btsSection = document.querySelector('[data-bts-section]');
+    if (btsSection) {
+      if (project.category.includes('Passion Projects')) {
+        // Show BTS section for Passion Projects
+        btsSection.style.display = 'grid';
+      } else {
+        // Hide BTS section for Influencer Content and Commercial Work
+        btsSection.style.display = 'none';
+      }
+    }
+  }
+});
+
+const cardMedia = {
+  'card-a': 'images/redemption-thumb.jpg',
+  'card-b': 'images/nocturnal-thumb.jpg',
+  'card-c': 'images/blossom-thumb.jpg',
+  'card-d': 'images/vijay-creates-thumb.jpg',
+  'card-e': 'images/sara-khan-thumb.jpg',
+  'card-f': 'images/gym-wale-bhaiya-thumb.jpg',
+  'card-g': 'images/daood-khan-thumb.jpg',
+  'card-h': 'images/manvi-thumb.jpg',
+  'card-i': 'images/floo-thumb.jpg',
+  'card-j': 'images/socialite-seven-thumb.jpg',
+  'card-k': 'images/bhooka-bangali-thumb.jpg',
+  'card-l': 'images/navrang-saree-house-thumb.jpg',
+  'card-m': 'images/real-estate-thumb.jpg',
+  'card-n': 'images/hospitality-thumb.jpg',
+  'card-o': 'images/retail-and-stores-thumb.jpg',
+  'card-p': 'images/podcast-work-thumb.jpg'
+};
+
+const videoExtensions = /\.(mp4|webm|ogg|mov)(?:$|\?)/i;
+const collageOneSource = 'images/collage-1.JPG';
+const createMediaElement = (source, alt, isHero = false) => {
+  if (videoExtensions.test(source)) {
+    const video = document.createElement('video');
+    video.src = source;
+    video.muted = true;
+    video.loop = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.preload = 'metadata';
+    if (isHero) video.controls = true;
+    video.setAttribute('aria-label', alt);
+    return video;
+  }
+  const image = document.createElement('img');
+  image.src = source;
+  image.alt = alt;
+  image.loading = 'lazy';
+  image.decoding = 'async';
+  return image;
+};
+
+const mountMedia = (slot) => {
+  const source = slot.dataset.mediaSrc.trim();
+  if (!source) return;
+  const media = createMediaElement(source, slot.dataset.mediaAlt || 'Project media', slot.matches('.project-video'));
+  slot.prepend(media);
+};
+
+const firstCollageTile = document.querySelector('.intro-collage .collage-tile');
+if (firstCollageTile) firstCollageTile.dataset.mediaSrc = collageOneSource;
+document.querySelectorAll('[data-media-src]').forEach(mountMedia);
+
+document.querySelectorAll('.project-card').forEach((card) => {
+  const source = Object.entries(cardMedia).find(([className]) => card.classList.contains(className))?.[1];
+  if (!source) return;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'media-slot card-media';
+  wrapper.append(createMediaElement(source, `${card.querySelector('.card-label')?.textContent || 'Project'} thumbnail`));
+  card.prepend(wrapper);
+});
 
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
@@ -70,7 +173,8 @@ document.querySelectorAll('[data-rail]').forEach((rail) => {
 
 const detail = document.querySelector('[data-project-detail]');
 if (detail) {
-  const key = new URLSearchParams(window.location.search).get('id') || 'redemption';
+  const requestedKey = new URLSearchParams(window.location.search).get('id');
+  const key = projects[requestedKey] ? requestedKey : 'redemption';
   const project = projects[key] || projects.redemption;
   document.title = `${project.title} | RNM Productions`;
   detail.querySelector('[data-project-title]').textContent = project.title;
@@ -81,6 +185,9 @@ if (detail) {
   detail.querySelector('[data-project-description]').textContent = project.description;
   detail.querySelector('[data-project-credits]').textContent = project.credits;
   detail.querySelector('[data-project-video-label]').textContent = `${project.type} / LANDSCAPE`;
+  const projectMedia = detail.querySelector('[data-project-media]');
+  projectMedia.dataset.mediaSrc = `videos/${key}.mp4`;
+  mountMedia(projectMedia);
 }
 
 document.addEventListener('pointermove', (event) => {

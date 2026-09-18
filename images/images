@@ -1,4 +1,2 @@
-collage-1.JPG
-.intro-collage i:nth-child(1) { width: 22vw; height: 30vh; left: 3%; top: 17%; background: url('DSC05583.JPG') center/cover no-repeat; transform: rotate(9deg); }
 
 
