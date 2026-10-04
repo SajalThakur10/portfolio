@@ -78,7 +78,7 @@ const cardMedia = {
 };
 
 const videoExtensions = /\.(mp4|webm|ogg|mov)(?:$|\?)/i;
-const collageOneSource = 'images/collage-1.JPG';
+const collageOneSource = 'images/collage-1.jpg';
 const createMediaElement = (source, alt, isHero = false) => {
   if (videoExtensions.test(source)) {
     const video = document.createElement('video');

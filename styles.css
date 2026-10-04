@@ -697,7 +697,7 @@ h2 em {
   height: 30vh;
   left: 3%;
   top: 17%;
-  background-image: url("images/collage-1.JPG");
+  background-image: url("images/collage-1.jpg");
   transform: rotate(9deg);
 }
 .intro-collage i:nth-child(2) {
@@ -714,7 +714,7 @@ h2 em {
   height: 25vh;
   left: 12%;
   bottom: 11%;
-  background-image: url("images/collage-3.jpg");
+  background-image: url("images/collage-3.JPG");
   transform: rotate(-16deg);
   animation-delay: -5s;
 }
@@ -723,7 +723,7 @@ h2 em {
   height: 30vh;
   right: 12%;
   bottom: 8%;
-  background-image: url("images/collage-4.jpg");
+  background-image: url("images/collage-4.JPG");
   transform: rotate(8deg);
   animation-delay: -7s;
 }
@@ -732,7 +732,7 @@ h2 em {
   height: 18vh;
   left: 35%;
   top: 7%;
-  background-image: url("images/collage-5.jpg");
+  background-image: url("images/collage-5.JPG");
   transform: rotate(19deg);
 }
 .intro-collage i:nth-child(6) {
@@ -740,7 +740,7 @@ h2 em {
   height: 19vh;
   right: 34%;
   bottom: 10%;
-  background-image: url("images/collage-6.jpg");
+  background-image: url("images/collage-6.JPG");
   transform: rotate(-9deg);
 }
 .scroll-cue {
@@ -1178,16 +1178,19 @@ footer {
   margin-top: 55px;
 }
 .bts-one {
-  background-image: url("images/bts-one.jpg");
+  background-image: url("videos/bts-1.MP4");
 }
 .bts-two {
-  background-image: url("images/bts-two.jpg");
+  background-image: url("videos/bts-2.MP4");
 }
 .bts-three {
-  background-image: url("images/bts-three.jpg");
+  background-image: url("videos/bts-3.MP4");
 }
 .bts-four {
-  background-image: url("images/bts-four.jpg");
+  background-image: url("videos/bts-4.MOV");
+}
+.bts-five {
+  background-image: url("videos/bts-5.MOV");
 }
 .detail-footer {
   display: flex;
@@ -1420,7 +1423,12 @@ footer {
   }
 }
 
-/* Shared media behavior: every slot keeps its layout box while media fills it. */
+/* Keep standalone images responsive and fill media blocks without distortion. */
+body.image-fit img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .media-slot {
   position: relative;
   overflow: hidden;
@@ -1432,13 +1440,20 @@ footer {
   inset: 0;
   z-index: -1;
   display: block;
+}
+body.image-fit .media-slot > img {
   width: 100%;
   height: 100%;
   max-width: none;
   object-fit: cover;
   object-position: center;
 }
-.media-slot > video {
+ .media-slot > video {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
   pointer-events: none;
 }
 .media-slot > span {
