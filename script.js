@@ -12,7 +12,7 @@ const projects = {
   'bhooka-bangali': { title: 'Bhooka Bangali', category: 'Commercial Work / 03', type: 'Food film', format: 'Commercial / social', description: 'Flavor, appetite and a table full of movement, directed with a generous point of view.', credits: 'RNM Productions / Direction / Production' },
   'navrang-saree-house': { title: 'Navrang Saree House', category: 'Commercial Work / 04', type: 'Retail story', format: 'Brand film / photography', description: 'A celebration of color and continuity for a house where every fabric carries a memory.', credits: 'RNM Productions / Film / Photography' },
   'real-estate': { title: 'Real Estate', category: 'Commercial Work / 05', type: 'Space / architecture', format: 'Property film', description: 'Architecture rendered as atmosphere: a measured journey through light, volume and place.', credits: 'RNM Productions / Direction / Film' },
-  hospitality: { title: 'Hospitality', category: 'Commercial Work / 06', type: 'Experience film', format: 'Brand story', description: 'A sense of arrival, held in the gestures and textures that make a space feel like yours.', credits: 'RNM Productions / Creative / Production' },
+  'vip-pipes': { title: 'VIP Pipes', category: 'Commercial Work / 06', type: 'Brand film', format: 'Brand story / campaign', description: 'A brand story shaped around the design, quality and everyday utility of VIP Pipes.', credits: 'RNM Productions / Creative / Production' },
   'retail-and-stores': { title: 'Retail and Stores', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Campaign / retail', description: 'A visual system for the places where discovery, design and daily life meet.', credits: 'RNM Productions / Film / Direction' },
   'podcast-work': { title: 'Podcast Work', category: 'Commercial Work / 08', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production' }
 };
@@ -72,13 +72,13 @@ const cardMedia = {
   'card-k': 'images/bhooka-bangali-thumb.jpg',
   'card-l': 'images/navrang-saree-house-thumb.jpg',
   'card-m': 'images/real-estate-thumb.jpg',
-  'card-n': 'images/hospitality-thumb.jpg',
+  'card-n': 'images/vip-pipes-thumb.jpg',
   'card-o': 'images/retail-and-stores-thumb.jpg',
   'card-p': 'images/podcast-work-thumb.jpg'
 };
 
 const videoExtensions = /\.(mp4|webm|ogg|mov)(?:$|\?)/i;
-const collageOneSource = 'images/collage-1.jpg';
+const collageOneSource = 'images/collage-1.JPG';
 const createMediaElement = (source, alt, isHero = false) => {
   if (videoExtensions.test(source)) {
     const video = document.createElement('video');
@@ -88,6 +88,9 @@ const createMediaElement = (source, alt, isHero = false) => {
     video.autoplay = true;
     video.playsInline = true;
     video.preload = 'metadata';
+    video.setAttribute('muted', '');
+    video.setAttribute('autoplay', '');
+    video.setAttribute('loop', '');
     if (isHero) video.controls = true;
     video.setAttribute('aria-label', alt);
     return video;
@@ -144,14 +147,33 @@ document.querySelectorAll('[data-rail]').forEach((rail) => {
   let current = 0;
   let startX = 0;
   let dragging = false;
+  let activePointerId = null;
   const maxIndex = () => Math.max(0, cards.length - (window.innerWidth < 800 ? 1.25 : 4));
   const update = () => { const width = cards[0].getBoundingClientRect().width + 16; track.style.transform = `translateX(-${current * width}px)`; };
   const move = (direction) => { current = Math.max(0, Math.min(current + direction, Math.ceil(maxIndex()))); update(); };
   rail.parentElement.querySelector('[data-slide="prev"]').addEventListener('click', () => move(-1));
   rail.parentElement.querySelector('[data-slide="next"]').addEventListener('click', () => move(1));
-  rail.addEventListener('pointerdown', (event) => { dragging = true; startX = event.clientX; rail.setPointerCapture(event.pointerId); });
-  rail.addEventListener('pointerup', (event) => { if (!dragging) return; const distance = event.clientX - startX; if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1); dragging = false; });
-  rail.addEventListener('pointercancel', () => { dragging = false; });
+  rail.addEventListener('pointerdown', (event) => {
+    activePointerId = event.pointerId;
+    startX = event.clientX;
+    dragging = false;
+  });
+  rail.addEventListener('pointermove', (event) => {
+    if (event.pointerId !== activePointerId || dragging || Math.abs(event.clientX - startX) < 8) return;
+    dragging = true;
+    rail.setPointerCapture(event.pointerId);
+  });
+  rail.addEventListener('pointerup', (event) => {
+    if (event.pointerId !== activePointerId) return;
+    const distance = event.clientX - startX;
+    if (dragging && Math.abs(distance) > 45) move(distance < 0 ? 1 : -1);
+    dragging = false;
+    activePointerId = null;
+  });
+  rail.addEventListener('pointercancel', () => {
+    dragging = false;
+    activePointerId = null;
+  });
   window.addEventListener('resize', update);
   update();
 
