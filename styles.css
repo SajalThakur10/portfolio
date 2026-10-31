@@ -164,6 +164,45 @@
     0 18px 45px rgba(79, 207, 219, 0.16),
     0 0 35px rgba(155, 124, 255, 0.2);
 }
+.card-trigger {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.card-trigger:focus-visible {
+  outline: 1px solid var(--cyan);
+  outline-offset: -5px;
+}
+.card-explore {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  padding: 13px 20px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--cyan);
+  color: var(--ink);
+  background: rgba(11, 12, 28, 0.82);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.card-explore::after {
+  content: "  ↗";
+}
+.project-card.is-exploring .card-trigger {
+  display: none;
+}
+.project-card.is-exploring .card-explore {
+  display: block;
+}
 .card-label {
   font: 25px var(--display);
 }
@@ -234,7 +273,7 @@
   height: 100%;
   min-height: 57vw;
   max-height: 680px;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0.65;
 }
 .video-placeholder {
@@ -954,9 +993,6 @@ h2 em {
 .card-c {
   background-image: url("images/blossom-thumb.jpg");
 }
-.card-d {
-  background-image: url("images/vijay-creates-thumb.jpg");
-}
 .card-e {
   background-image: url("images/sara-khan-thumb.jpg");
 }
@@ -965,9 +1001,6 @@ h2 em {
 }
 .card-g {
   background-image: url("images/daood-khan-thumb.jpg");
-}
-.card-h {
-  background-image: url("images/manvi-thumb.jpg");
 }
 .card-i {
   background-image: url("images/floo-thumb.jpg");
@@ -986,9 +1019,6 @@ h2 em {
 }
 .card-n {
   background-image: url("images/vip-pipes-thumb.jpg");
-}
-.card-o {
-  background-image: url("images/retail-and-stores-thumb.jpg");
 }
 .card-p {
   background-image: url("images/podcast-work-thumb.jpg");
@@ -1411,7 +1441,7 @@ footer {
   }
 }
 
-/* Keep standalone images responsive and fill media blocks without distortion. */
+/* Keep media responsive and preserve its full frame within each slot. */
 body.image-fit img {
   display: block;
   max-width: 100%;
@@ -1433,14 +1463,14 @@ body.image-fit .media-slot > img {
   width: 100%;
   height: 100%;
   max-width: none;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
  .media-slot > video {
   width: 100%;
   height: 100%;
   max-width: none;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   pointer-events: none;
 }
