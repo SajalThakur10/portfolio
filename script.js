@@ -21,8 +21,10 @@ const projects = {
     title: 'Daood Khan', category: 'Influencer Content / 03', type: 'Portrait series', format: 'Digital campaign', description: 'A character-led portrait series that lets craft, charisma and considered light lead the way.', credits: 'RNM Productions / Direction / Photography',
     additionalVideos: [{ title: 'Video 2 Title', src: 'videos/daood-khan-02.mp4' }]
   },
+  floo: { title: 'Floo', category: 'Commercial Projects / 02', type: 'Brand film', format: 'Commercial / campaign', description: 'A product world with a clear pulse: tactile, contemporary and made to stay with you.', credits: 'RNM Productions / Film / Production' },
+  'socialite-seven': { title: 'Socialite Seven', category: 'Commercial Projects / 03', type: 'Campaign', format: 'Brand campaign', description: 'A campaign that turns an everyday ritual into an invitation to look closer.', credits: 'RNM Productions / Creative Direction / Film', bts: ['videos/bts-1.mp4', 'videos/bts-2.mp4', 'videos/bts-3.mp4', 'videos/bts-4.mp4'] },
   'vip-pipes': {
-    title: 'VIP Pipes', category: 'Commercial Work / 01', type: 'Brand film', format: 'Brand story / campaign', description: 'A brand story shaped around the design, quality and everyday utility of VIP Pipes.', credits: 'RNM Productions / Creative / Production', video: 'videos/VIP-pipes.mp4', bts: ['videos/bts-1.mp4', 'videos/bts-2.mp4', 'videos/bts-3.mp4', 'videos/bts-4.mp4'],
+    title: 'VIP Pipes', category: 'Commercial Projects / 01', type: 'Brand film', format: 'Brand story / campaign', description: 'A brand story shaped around the design, quality and everyday utility of VIP Pipes.', credits: 'RNM Productions / Creative / Production', video: 'videos/VIP-pipes.mp4', bts: ['videos/bts-1.mp4', 'videos/bts-2.mp4', 'videos/bts-3.mp4', 'videos/bts-4.mp4'],
     additionalVideos: [
       { title: 'Video 2 Title', src: 'videos/VIP-pipes-02.mp4' },
       { title: 'Video 3 Title', src: 'videos/VIP-pipes-03.mp4' },
@@ -30,14 +32,14 @@ const projects = {
     ]
   },
   'navrang-saree-house': {
-    title: 'Navrang Saree House', category: 'Commercial Work / 02', type: 'Retail story', format: 'Brand film / photography', description: 'A celebration of color and continuity for a house where every fabric carries a memory.', credits: 'RNM Productions / Film / Photography',
+    title: 'Navrang Saree House', category: 'Commercial Projects / 04', type: 'Retail story', format: 'Brand film / photography', description: 'A celebration of color and continuity for a house where every fabric carries a memory.', credits: 'RNM Productions / Film / Photography',
     additionalVideos: [
       { title: 'Video 2 Title', src: 'videos/navrang-saree-house-02.mp4' },
       { title: 'Video 3 Title', src: 'videos/navrang-saree-house-03.mp4' }
     ]
   },
   'real-estate': {
-    title: 'Real Estate', category: 'Commercial Work / 03', type: 'Space / architecture', format: 'Property film', description: 'Architecture rendered as atmosphere: a measured journey through light, volume and place.', credits: 'RNM Productions / Direction / Film',
+    title: 'Real Estate', category: 'Commercial Projects / 05', type: 'Space / architecture', format: 'Property film', description: 'Architecture rendered as atmosphere: a measured journey through light, volume and place.', credits: 'RNM Productions / Direction / Film',
     additionalVideos: [
       { title: 'Video 2 Title', src: 'videos/real-estate-02.mp4' },
       { title: 'Video 3 Title', src: 'videos/real-estate-03.mp4' },
@@ -45,13 +47,12 @@ const projects = {
     ]
   },
   'podcast-work': {
-    title: 'Podcast Work', category: 'Commercial Work / 04', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production',
+    title: 'Podcast Work', category: 'Commercial Projects / 06', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production',
     additionalVideos: [{ title: 'Video 2 Title', src: 'videos/podcast-work-02.mp4' }]
   },
-  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 05', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
-  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 06', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
-  'mile-x': { title: 'MILE X', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4' },
-  floo: { title: 'Floo', category: 'Commercial Work / 08', type: 'Brand film', format: 'Commercial / campaign', description: 'A product world with a clear pulse: tactile, contemporary and made to stay with you.', credits: 'RNM Productions / Film / Production' }
+  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Projects / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
+  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Projects / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
+  'mile-x': { title: 'MILE X', category: 'Commercial Projects / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4' }
 };
 
 const cardMedia = {
@@ -62,6 +63,7 @@ const cardMedia = {
   'card-f': 'images/gym-wale-bhaiya-thumb.jpg',
   'card-g': 'images/daood-khan-thumb.jpg',
   'card-i': 'images/floo-thumb.jpg',
+  'card-j': 'images/socialite-seven-thumb.jpg',
   'card-l': 'images/navrang-saree-house-thumb.jpg',
   'card-m': 'images/real-estate-thumb.jpg',
   'card-n': 'images/VIP-pipes-thumb.jpg',
@@ -100,16 +102,33 @@ const loadVideo = (video) => {
   }
 };
 
-const createMediaElement = (source, alt, poster = fallbackPoster) => {
+const mediaObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    loadVideo(entry.target);
+    observer.unobserve(entry.target);
+  });
+}, { rootMargin: '300px' }) : null;
+
+const createMediaElement = (source, alt, poster = fallbackPoster, autoplay = false) => {
   if (videoExtensions.test(source)) {
     const video = document.createElement('video');
     video.dataset.src = source;
     video.poster = poster;
     video.playsInline = true;
-    video.controls = false;
     video.preload = 'none';
     video.setAttribute('playsinline', '');
     video.setAttribute('aria-label', alt);
+    if (autoplay) {
+      video.muted = true;
+      video.loop = true;
+      video.autoplay = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('loop', '');
+      video.setAttribute('autoplay', '');
+    } else {
+      video.controls = false;
+    }
     return video;
   }
   const image = document.createElement('img');
@@ -123,13 +142,21 @@ const createMediaElement = (source, alt, poster = fallbackPoster) => {
 const mountMedia = (slot) => {
   const source = slot.dataset.mediaSrc.trim();
   if (!source) return;
+  const isMarqueeVideo = slot.matches('.marquee-image');
   const media = createMediaElement(
     source,
     slot.dataset.mediaAlt || 'Project media',
-    slot.dataset.mediaPoster || mediaPosters[source] || fallbackPoster
+    slot.dataset.mediaPoster || mediaPosters[source] || fallbackPoster,
+    isMarqueeVideo
   );
   slot.prepend(media);
   if (!(media instanceof HTMLVideoElement)) return;
+
+  if (isMarqueeVideo) {
+    if (mediaObserver) mediaObserver.observe(media);
+    else loadVideo(media);
+    return;
+  }
 
   let playButton = slot.querySelector('.video-play-button');
   if (!playButton) {
