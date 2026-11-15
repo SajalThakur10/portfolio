@@ -1,7 +1,7 @@
 const projects = {
-  redemption: { title: 'Redemption', category: 'Passion Projects / 01', type: 'Fashion film', format: 'Short film / editorial', description: 'A study in transformation, shadow and the quiet voltage of a new beginning.', credits: 'RNM Productions / Direction / Production', bts: ['images/redemption-bts-01.jpg', 'images/redemption-bts-02.jpg', 'images/redemption-bts-03.jpg', 'images/redemption-bts-04.jpg'] },
+  redemption: { title: 'Redemption', category: 'Passion Projects / 01', type: 'Fashion film', format: 'Short film / editorial', description: 'A study in transformation, shadow and the quiet voltage of a new beginning.', credits: 'RNM Productions / Direction / Production', bts: ['images/redemption-bts-01.JPG', 'images/redemption-bts-02.JPG', 'images/redemption-bts-03.jpg', 'images/redemption-bts-04.JPG'] },
   nocturnal: { title: 'Nocturnal', category: 'Passion Projects / 02', type: 'Editorial film', format: 'Fashion film / photography', description: 'A nocturne built from electric color, late hours and a silhouette that refuses to disappear.', credits: 'RNM Productions / Creative Direction / Film', bts: ['images/nocturnal-bts-01.jpg', 'images/nocturnal-bts-02.jpg', 'images/nocturnal-bts-03.jpg', 'images/nocturnal-bts-04.jpg'] },
-  blossom: { title: 'Blossom', category: 'Passion Projects / 03', type: 'Fashion story', format: 'Editorial / stills', description: 'Texture, movement and a softer kind of power captured in a sequence of evolving frames.', credits: 'RNM Productions / Photography / Production', video: 'videos/blossom.mp4', bts: ['videos/blossom-bts-01.MP4', 'videos/blossom-bts-02.mp4', 'videos/blossom-bts-03.mp4', 'videos/blossom-bts-04.mp4'] },
+  blossom: { title: 'Blossom', category: 'Passion Projects / 03', type: 'Fashion story', format: 'Editorial / stills', description: 'Texture, movement and a softer kind of power captured in a sequence of evolving frames.', credits: 'RNM Productions / Photography / Production', video: 'videos/blossom.mp4', btsAutoplay: true, bts: ['videos/blossom-bts-01.MP4', 'videos/blossom-bts-02.mp4', 'videos/blossom-bts-03.mp4', 'videos/blossom-bts-04.mp4'] },
   'sara-khan': {
     title: 'Sara Khan', category: 'Influencer Content / 01', type: 'Personal story', format: 'Portrait film', description: 'A portrait of presence, built around the details that make a public image feel human.', credits: 'RNM Productions / Film / Photography',
     additionalVideos: [
@@ -22,9 +22,8 @@ const projects = {
     additionalVideos: [{ title: 'Video 2 Title', src: 'videos/daood-khan-02.mp4' }]
   },
   floo: { title: 'Floo', category: 'Commercial Projects / 02', type: 'Brand film', format: 'Commercial / campaign', description: 'A product world with a clear pulse: tactile, contemporary and made to stay with you.', credits: 'RNM Productions / Film / Production' },
-  'socialite-seven': { title: 'Socialite Seven', category: 'Commercial Projects / 03', type: 'Campaign', format: 'Brand campaign', description: 'A campaign that turns an everyday ritual into an invitation to look closer.', credits: 'RNM Productions / Creative Direction / Film', bts: ['videos/bts-1.mp4', 'videos/bts-2.mp4', 'videos/bts-3.mp4', 'videos/bts-4.mp4'] },
   'vip-pipes': {
-    title: 'VIP Pipes', category: 'Commercial Projects / 01', type: 'Brand film', format: 'Brand story / campaign', description: 'A brand story shaped around the design, quality and everyday utility of VIP Pipes.', credits: 'RNM Productions / Creative / Production', video: 'videos/VIP-pipes.mp4', bts: ['videos/bts-1.mp4', 'videos/bts-2.mp4', 'videos/bts-3.mp4', 'videos/bts-4.mp4'],
+    title: 'VIP Pipes', category: 'Commercial Projects / 01', type: 'Brand film', format: 'Brand story / campaign', description: 'A brand story shaped around the design, quality and everyday utility of VIP Pipes.', credits: 'RNM Productions / Creative / Production', video: 'videos/VIP-pipes.mp4', bts: ['images/VIP-pipes-bts-01.JPG', 'images/VIP-pipes-bts-02.JPG', 'images/VIP-pipes-bts-03.JPG', 'images/VIP-pipes-bts-04.JPG'],
     additionalVideos: [
       { title: 'Video 2 Title', src: 'videos/VIP-pipes-02.mp4' },
       { title: 'Video 3 Title', src: 'videos/VIP-pipes-03.mp4' },
@@ -32,14 +31,14 @@ const projects = {
     ]
   },
   'navrang-saree-house': {
-    title: 'Navrang Saree House', category: 'Commercial Projects / 04', type: 'Retail story', format: 'Brand film / photography', description: 'A celebration of color and continuity for a house where every fabric carries a memory.', credits: 'RNM Productions / Film / Photography',
+    title: 'Navrang Saree House', category: 'Commercial Projects / 03', type: 'Retail story', format: 'Brand film / photography', description: 'A celebration of color and continuity for a house where every fabric carries a memory.', credits: 'RNM Productions / Film / Photography',
     additionalVideos: [
       { title: 'Video 2 Title', src: 'videos/navrang-saree-house-02.mp4' },
       { title: 'Video 3 Title', src: 'videos/navrang-saree-house-03.mp4' }
     ]
   },
   'real-estate': {
-    title: 'Real Estate', category: 'Commercial Projects / 05', type: 'Space / architecture', format: 'Property film', description: 'Architecture rendered as atmosphere: a measured journey through light, volume and place.', credits: 'RNM Productions / Direction / Film',
+    title: 'Real Estate', category: 'Commercial Projects / 04', type: 'Space / architecture', format: 'Property film', description: 'Architecture rendered as atmosphere: a measured journey through light, volume and place.', credits: 'RNM Productions / Direction / Film',
     additionalVideos: [
       { title: 'Video 2 Title', src: 'videos/real-estate-02.mp4' },
       { title: 'Video 3 Title', src: 'videos/real-estate-03.mp4' },
@@ -47,12 +46,12 @@ const projects = {
     ]
   },
   'podcast-work': {
-    title: 'Podcast Work', category: 'Commercial Projects / 06', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production',
-    additionalVideos: [{ title: 'Video 2 Title', src: 'videos/podcast-work-02.mp4' }]
+    title: 'Podcast Work', category: 'Commercial Projects / 05', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production',
+    additionalVideos: [{ title: 'Video 2 Title', src: 'videos/podcast-work-02.mp4', thumbnail: 'images/podcast-work-thumb.jpg' }]
   },
-  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
-  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
-  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4' }
+  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 06', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
+  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
+  'mile-x': { title: 'MILE X', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4' }
 };
 
 const cardMedia = {
@@ -63,11 +62,13 @@ const cardMedia = {
   'card-f': 'images/gym-wale-bhaiya-thumb.jpg',
   'card-g': 'images/daood-khan-thumb.jpg',
   'card-i': 'images/floo-thumb.jpg',
-  'card-j': 'images/socialite-seven-thumb.jpg',
   'card-l': 'images/navrang-saree-house-thumb.jpg',
   'card-m': 'images/real-estate-thumb.jpg',
   'card-n': 'images/VIP-pipes-thumb.jpg',
-  'card-p': 'images/podcast-work-thumb.jpg'
+  'card-p': 'images/podcast-work-thumb.jpg',
+  'card-q': 'images/castrol-oil-thumb.png',
+  'card-r': 'images/ampere-electric-thumb.png',
+  'card-s': 'images/mile-x-thumb.png'
 };
 
 const projectPosters = {
@@ -82,12 +83,12 @@ const projectPosters = {
   'real-estate': 'images/real-estate-thumb.jpg',
   'vip-pipes': 'images/VIP-pipes-thumb.jpg',
   'podcast-work': 'images/podcast-work-thumb.jpg',
-  'castrol-oil': 'images/collage-1.JPG',
-  'ampere-electric': 'images/collage-1.JPG',
-  'mile-x': 'images/collage-1.JPG'
+  'castrol-oil': 'images/castrol-oil-thumb.png',
+  'ampere-electric': 'images/ampere-electric-thumb.png',
+  'mile-x': 'images/mile-x-thumb.png'
 };
 
-const videoExtensions = /\.(mp4|webm|ogg|mov)(?:$|\?)/i;
+const videoExtensions = /\.mp4(?:$|\?)/i;
 const fallbackPoster = 'images/collage-1.JPG';
 const mediaPosters = {
   'videos/bts-1.mp4': 'images/collage-1.JPG',
@@ -97,9 +98,12 @@ const mediaPosters = {
   'videos/bts-5.mp4': 'images/collage-5.JPG'
 };
 const loadVideo = (video) => {
-  if (!video.hasAttribute('src')) {
-    video.src = video.dataset.src;
-  }
+  if (video.querySelector('source')) return;
+  const source = document.createElement('source');
+  source.src = video.dataset.src;
+  source.type = 'video/mp4';
+  video.append(source);
+  video.load();
 };
 
 const mediaObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries, observer) => {
@@ -110,13 +114,14 @@ const mediaObserver = 'IntersectionObserver' in window ? new IntersectionObserve
   });
 }, { rootMargin: '300px' }) : null;
 
-const createMediaElement = (source, alt, poster = fallbackPoster, autoplay = false) => {
+const createMediaElement = (source, alt, poster = fallbackPoster, autoplay = false, controls = true) => {
   if (videoExtensions.test(source)) {
     const video = document.createElement('video');
     video.dataset.src = source;
     video.poster = poster;
     video.playsInline = true;
-    video.preload = 'none';
+    video.preload = 'metadata';
+    video.controls = controls;
     video.setAttribute('playsinline', '');
     video.setAttribute('aria-label', alt);
     if (autoplay) {
@@ -126,8 +131,6 @@ const createMediaElement = (source, alt, poster = fallbackPoster, autoplay = fal
       video.setAttribute('muted', '');
       video.setAttribute('loop', '');
       video.setAttribute('autoplay', '');
-    } else {
-      video.controls = false;
     }
     return video;
   }
@@ -143,57 +146,31 @@ const mountMedia = (slot) => {
   const source = slot.dataset.mediaSrc.trim();
   if (!source) return;
   const isMarqueeVideo = slot.matches('.marquee-image');
+  const autoplay = isMarqueeVideo || slot.dataset.mediaAutoplay === 'true';
   const media = createMediaElement(
     source,
     slot.dataset.mediaAlt || 'Project media',
     slot.dataset.mediaPoster || mediaPosters[source] || fallbackPoster,
-    isMarqueeVideo
+    autoplay,
+    !isMarqueeVideo
   );
   slot.prepend(media);
   if (!(media instanceof HTMLVideoElement)) return;
 
-  if (isMarqueeVideo) {
-    if (mediaObserver) mediaObserver.observe(media);
-    else loadVideo(media);
-    return;
-  }
-
-  let playButton = slot.querySelector('.video-play-button');
-  if (!playButton) {
-    playButton = document.createElement('button');
-    playButton.className = 'video-play-button';
-    playButton.type = 'button';
-    playButton.textContent = '▶';
-    slot.append(playButton);
-  }
   let status = slot.querySelector('[data-video-status]');
-  if (!status) {
+  if (!status && !isMarqueeVideo) {
     status = document.createElement('span');
     status.className = 'video-status';
     status.dataset.videoStatus = '';
     status.setAttribute('aria-live', 'polite');
     slot.append(status);
   }
-  const showPlayButton = () => {
-    playButton.hidden = false;
-    playButton.setAttribute('aria-label', media.ended ? 'Replay video' : 'Play video');
-  };
   media.addEventListener('error', () => {
-    status.textContent = 'Unable to load video. Check your connection and try again.';
+    if (status) status.textContent = 'Unable to load video. Check your connection and try again.';
     console.error('Unable to load video:', media.error);
   });
-  playButton.addEventListener('click', () => {
-    loadVideo(media);
-    media.controls = true;
-    status.textContent = '';
-    media.play().catch((error) => {
-      status.textContent = 'Video could not be played. Try again.';
-      console.error('Unable to play video:', error);
-    });
-  });
-  media.addEventListener('playing', () => { playButton.hidden = true; });
-  media.addEventListener('pause', showPlayButton);
-  media.addEventListener('ended', showPlayButton);
+  if (mediaObserver) mediaObserver.observe(media);
+  else loadVideo(media);
 };
 
 document.querySelectorAll('[data-media-src]').forEach(mountMedia);
@@ -315,7 +292,7 @@ if (detail) {
   const projectMedia = detail.querySelector('[data-project-media]');
   const portraitProjects = new Set([
     'blossom', 'sara-khan', 'daood-khan', 'gym-wale-bhaiya',
-    'floo', 'navrang-saree-house', 'real-estate', 'vip-pipes', 'podcast-work',
+    'floo', 'navrang-saree-house', 'real-estate', 'vip-pipes',
     'castrol-oil', 'ampere-electric', 'mile-x'
   ]);
   projectMedia.classList.toggle('is-portrait', portraitProjects.has(key));
@@ -332,12 +309,26 @@ if (detail) {
     heading.className = 'project-video-title';
     heading.textContent = video.title || `Video ${index + 2} Title`;
     const slot = document.createElement('div');
-    slot.className = 'project-video media-slot is-portrait';
+    slot.className = 'project-video media-slot';
+    if (portraitProjects.has(key)) slot.classList.add('is-portrait');
     slot.dataset.mediaSrc = video.src;
     slot.dataset.mediaPoster = projectPosters[key] || fallbackPoster;
     slot.dataset.mediaAlt = `${project.title} ${heading.textContent}`;
-    slot.innerHTML = '<button class="video-play-button" type="button" aria-label="Play video">&#9654;</button><span class="video-status" data-video-status aria-live="polite"></span>';
-    frame.append(heading, slot);
+    const status = document.createElement('span');
+    status.className = 'video-status';
+    status.dataset.videoStatus = '';
+    status.setAttribute('aria-live', 'polite');
+    slot.append(status);
+    frame.append(heading);
+    if (video.thumbnail) {
+      const thumbnail = document.createElement('div');
+      thumbnail.className = 'media-slot project-video-thumbnail';
+      thumbnail.dataset.mediaSrc = video.thumbnail;
+      thumbnail.dataset.mediaAlt = `${project.title} ${heading.textContent} thumbnail`;
+      frame.append(thumbnail);
+      mountMedia(thumbnail);
+    }
+    frame.append(slot);
     videoStack.append(frame);
     mountMedia(slot);
   });
@@ -355,6 +346,9 @@ if (detail) {
       frame.dataset.mediaSrc = source;
       frame.dataset.mediaPoster = projectPosters[key] || fallbackPoster;
       frame.dataset.mediaAlt = `${project.title} BTS ${String(index + 1).padStart(2, '0')}`;
+      if (project.btsAutoplay && videoExtensions.test(source)) {
+        frame.dataset.mediaAutoplay = 'true';
+      }
       const label = document.createElement('span');
       label.textContent = frame.dataset.mediaAlt;
       frame.append(label);

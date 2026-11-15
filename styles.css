@@ -440,6 +440,7 @@ h2 em {
 
 .marquee-image > video {
   z-index: 0;
+  pointer-events: none;
 }
 
 .warp-transition {
@@ -777,7 +778,7 @@ body.image-fit .media-slot > img {
   max-width: none;
   object-fit: cover;
   object-position: center;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .media-slot > span {
@@ -825,32 +826,12 @@ body.image-fit .media-slot > img {
   line-height: 1;
 }
 
-.video-play-button {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  width: 58px;
-  height: 58px;
-  display: grid;
-  place-items: center;
-  padding: 0 0 0 3px;
-  transform: translate(-50%, -50%);
-  border: 1px solid var(--cyan);
-  border-radius: 50%;
-  color: var(--cyan);
-  background: rgba(5, 6, 15, 0.78);
-  cursor: pointer;
-}
-
-.video-play-button:hover,
-.video-play-button:focus-visible {
-  color: var(--space);
-  background: var(--cyan);
-}
-
-.video-play-button[hidden] {
-  display: none;
+.project-video-thumbnail {
+  width: 100%;
+  margin-bottom: 22px;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  background: #101228;
 }
 
 .video-status:empty {
@@ -881,7 +862,6 @@ body.image-fit .media-slot > img {
   z-index: 0;
 }
 
-.card-media .video-play-button,
 .card-media .video-status {
   display: none;
 }
@@ -917,6 +897,10 @@ body.image-fit .media-slot > img {
   font-size: 10px;
   letter-spacing: 0.12em;
   background: #18182f;
+}
+
+.bts-image > video {
+  z-index: 0;
 }
 
 .bts-image:nth-child(even) {
