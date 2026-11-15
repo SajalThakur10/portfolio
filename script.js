@@ -52,7 +52,7 @@ const projects = {
   },
   'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
   'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
-  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile x with sarah khan.mp4' }
+  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4' }
 };
 
 const cardMedia = {
