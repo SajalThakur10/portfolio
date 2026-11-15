@@ -1,6 +1,6 @@
 const projects = {
-  redemption: { title: 'Redemption', category: 'Passion Projects / 01', type: 'Fashion film', format: 'Short film / editorial', description: 'A study in transformation, shadow and the quiet voltage of a new beginning.', credits: 'RNM Productions / Direction / Production' },
-  nocturnal: { title: 'Nocturnal', category: 'Passion Projects / 02', type: 'Editorial film', format: 'Fashion film / photography', description: 'A nocturne built from electric color, late hours and a silhouette that refuses to disappear.', credits: 'RNM Productions / Creative Direction / Film' },
+  redemption: { title: 'Redemption', category: 'Passion Projects / 01', type: 'Fashion film', format: 'Short film / editorial', description: 'A study in transformation, shadow and the quiet voltage of a new beginning.', credits: 'RNM Productions / Direction / Production', bts: ['images/redemption-bts-01.jpg', 'images/redemption-bts-02.jpg', 'images/redemption-bts-03.jpg', 'images/redemption-bts-04.jpg'] },
+  nocturnal: { title: 'Nocturnal', category: 'Passion Projects / 02', type: 'Editorial film', format: 'Fashion film / photography', description: 'A nocturne built from electric color, late hours and a silhouette that refuses to disappear.', credits: 'RNM Productions / Creative Direction / Film', bts: ['images/nocturnal-bts-01.jpg', 'images/nocturnal-bts-02.jpg', 'images/nocturnal-bts-03.jpg', 'images/nocturnal-bts-04.jpg'] },
   blossom: { title: 'Blossom', category: 'Passion Projects / 03', type: 'Fashion story', format: 'Editorial / stills', description: 'Texture, movement and a softer kind of power captured in a sequence of evolving frames.', credits: 'RNM Productions / Photography / Production', video: 'videos/blossom.mp4', bts: ['videos/blossom-bts-01.MP4', 'videos/blossom-bts-02.mp4', 'videos/blossom-bts-03.mp4', 'videos/blossom-bts-04.mp4'] },
   'sara-khan': {
     title: 'Sara Khan', category: 'Influencer Content / 01', type: 'Personal story', format: 'Portrait film', description: 'A portrait of presence, built around the details that make a public image feel human.', credits: 'RNM Productions / Film / Photography',
@@ -50,9 +50,9 @@ const projects = {
     title: 'Podcast Work', category: 'Commercial Projects / 06', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production',
     additionalVideos: [{ title: 'Video 2 Title', src: 'videos/podcast-work-02.mp4' }]
   },
-  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
-  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
-  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4' }
+  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4', additionalVideos: [{ title: 'Video 2', src: 'videos/castrol-oil-02.mp4' }] },
+  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4', additionalVideos: [{ title: 'Video 2', src: 'videos/ampere-electric-02.mp4' }] },
+  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4', additionalVideos: [{ title: 'Video 2', src: 'videos/mile-x-02.mp4' }] }
 };
 
 const cardMedia = {
@@ -315,7 +315,8 @@ if (detail) {
   const projectMedia = detail.querySelector('[data-project-media]');
   const portraitProjects = new Set([
     'blossom', 'sara-khan', 'daood-khan', 'gym-wale-bhaiya',
-    'floo', 'navrang-saree-house', 'real-estate', 'vip-pipes'
+    'floo', 'navrang-saree-house', 'real-estate', 'vip-pipes', 'podcast-work',
+    'castrol-oil', 'ampere-electric', 'mile-x'
   ]);
   projectMedia.classList.toggle('is-portrait', portraitProjects.has(key));
   projectMedia.dataset.mediaSrc = project.video || `videos/${key}.mp4`;
