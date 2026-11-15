@@ -50,9 +50,9 @@ const projects = {
     title: 'Podcast Work', category: 'Commercial Projects / 06', type: 'Conversation series', format: 'Multi-camera / digital', description: 'A considered visual home for ideas in conversation, with room for every voice to land.', credits: 'RNM Productions / Multi-camera / Production',
     additionalVideos: [{ title: 'Video 2 Title', src: 'videos/podcast-work-02.mp4' }]
   },
-  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4', additionalVideos: [{ title: 'Video 2', src: 'videos/castrol-oil-02.mp4' }] },
-  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4', additionalVideos: [{ title: 'Video 2', src: 'videos/ampere-electric-02.mp4' }] },
-  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile-x.mp4', additionalVideos: [{ title: 'Video 2', src: 'videos/mile-x-02.mp4' }] }
+  'castrol-oil': { title: 'Castrol Oil', category: 'Commercial Work / 07', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/castrol-oil.mp4' },
+  'ampere-electric': { title: 'Ampere Electric', category: 'Commercial Work / 08', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/ampere-electric.mp4' },
+  'mile-x': { title: 'MILE X', category: 'Commercial Work / 09', type: 'Commercial film', format: 'Brand film / campaign', description: '', credits: 'RNM Productions / Film / Production', video: 'videos/mile x with sarah khan.mp4' }
 };
 
 const cardMedia = {
